@@ -1,17 +1,60 @@
 <div id="sidebar">
-  <div id="sidebarHeader">
-    <div class="avatarContainer">
-      <img src="../assets/images/avatar.png">
-    </div>
-    <div class="actionContainer"></div>
+  <div id="row1">
 
+
+    <div id="sidebarHeader">
+      <div class="avatarContainer">
+        <img src="../assets/images/avatar.png">
+      </div>
+      <div class="actionContainer">
+        <img src="../../assets/images/status.png" />
+        <img src="../../assets/images/chaticon.png" />
+        <img src="../../assets/images/more.png" />
+      </div>
+  
+    </div>
+    <div id="searchBox">
+      <img width="13" src="../assets/images/search-icon.png" />
+      <input type="text" placeholder="Search or start a new chat" />
+    </div>
   </div>
-  <div id="searchBox">
-    <img width="13" src="../assets/images/search-icon.png" />
-    <input type="text" placeholder="Search or start a new chat" />
-  </div>
+ 
 
   <div id="sidebarContent">
-    <div id="noConversations">All chats are archived</div>
+    <!-- <div id="noConversations">All chats are archived</div> -->
+
+
+    <!-- <div class="conversation"> -->
+      <!-- <div class="picture">
+        <img src="../../assets/images/avatar.png" />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">Alex</div>
+          <div class="time">8:12 AM</div>
+        </div>
+        <div class="message"> Good Morning !!</div>
+      </div>
+     </div> -->
+
+
+     <div class="conversation " *ngFor="let item of conversations">
+      <div class="picture">
+        <img src="../../assets/images/avatar.png" />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">{{item.name}}</div>
+          <div class="time">{{item.time}} AM</div>
+        </div>
+
+        <div class="message"> 
+          <img *ngIf="!item.latestMessageRead" src="../../assets/images/double-tick-svgrepo-com.svg" />
+          <img *ngIf="item.latestMessageRead" src="../../assets/images/double-check-blue.svg" />
+          {{item.lastMessage}}
+        </div>
+
+      </div>
+     </div>
   </div>
 </div>
