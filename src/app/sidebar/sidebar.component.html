@@ -40,7 +40,7 @@
 
      <div class="conversation " *ngFor="let item of conversations">
       <div class="picture">
-        <img src="../../assets/images/avatar.png" />
+        <img src="assets/images/avatar.png" />
       </div>
       <div class="content">
         <div class="conversationHeader">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="message"> 
-          <img *ngIf="!item.latestMessageRead" src="../../assets/images/double-tick-svgrepo-com.svg" />
+          <img *ngIf="!item.latestMessageRead" src="assets/images/double-tick-svgrepo-com.svg" />
           <img *ngIf="item.latestMessageRead" src="../../assets/images/double-check-blue.svg" />
           {{item.lastMessage}}
         </div>
