@@ -21,6 +21,7 @@
  
 
   <div id="sidebarContent">
+
     <!-- <div id="noConversations">All chats are archived</div> -->
 
 
@@ -38,7 +39,9 @@
      </div> -->
 
 
-     <div class="conversation " *ngFor="let item of conversations">
+     <div class="conversation " *ngFor="let item of conversations"
+     (click)="conversationClicked.emit(item)"
+     >
       <div class="picture">
         <img src="assets/images/avatar.png" />
       </div>

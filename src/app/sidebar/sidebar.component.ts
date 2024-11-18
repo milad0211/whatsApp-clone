@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class SidebarComponent {
 
+  @Output() conversationClicked: EventEmitter<any> = new EventEmitter();
   conversations = [
     {name:"Davic",time:"8:21",lastMessage:"Good Morning",latestMessageRead:false},
     {name:"Davic",time:"8:21",lastMessage:"Good Morning",latestMessageRead:true},
